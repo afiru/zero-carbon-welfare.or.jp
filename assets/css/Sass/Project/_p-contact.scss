@@ -1,0 +1,252 @@
+@use '../Global/' as *;
+
+.p-contact {
+  padding: 122px 0 100px 0;
+  @include MQ('md') {
+    padding: 200px 0 150px 0;
+  }
+}
+
+.p-contact--confirm {
+  .p-contactContentForm-button {
+    display: grid;
+    gap: 20px;
+    place-items: center;
+  }
+  .p-contactContentForm-title {
+    align-items: start;
+  }
+}
+
+.p-contact--thanks {
+  .p-contactContentBody {
+    margin-top: 80px;
+    @include MQ('md') {
+      margin-top: 100px;
+    }
+  }
+}
+
+.p-contactWrapper {
+  width: 84%;
+  @include MQ('md') {
+    width: 90%;
+  }
+}
+
+.p-contactContentHead {
+  margin-top: 60px;
+  @include MQ('md') {
+    margin-top: 80px;
+  }
+}
+
+.p-contactContentBody {
+  margin-top: 60px;
+  @include MQ('md') {
+    margin-top: 80px;
+  }
+}
+
+.p-contactContentFoot {
+  margin-top: 80px;
+  @include MQ('md') {
+    margin-top: 100px;
+  }
+}
+
+.p-contactContentHeadText {
+  p {
+    font-family: 'yu-mincho-pr6n';
+    font-size: clamp(rem(14), 1vw, rem(16));
+    font-weight: 400;
+    line-height: 24px;
+    text-align: justify;
+    @include MQ('md') {
+      line-height: 2;
+    }
+  }
+}
+
+.p-contactContentJoinText {
+  margin-top: 40px;
+  p {
+    font-family: 'yu-mincho-pr6n';
+    font-size: clamp(rem(14), 1vw, rem(16));
+    font-weight: 400;
+    line-height: 24px;
+    text-align: justify;
+    @include MQ('md') {
+      line-height: 2;
+    }
+  }
+
+  a {
+    color: var(--green);
+    text-decoration: underline;
+  }
+}
+
+.p-contactContentHeadAlert {
+  margin-top: 40px;
+  p {
+    position: relative;
+    font-family: 'yu-mincho-pr6n';
+    font-size: rem(13);
+    font-weight: 400;
+    line-height: 23px;
+    text-align: justify;
+    &::before {
+      content: '＊';
+      color: #ee0077;
+      font-family: 'yu-mincho-pr6n';
+      font-size: rem(13);
+      font-weight: 400;
+      line-height: 23px;
+      display: inline;
+    }
+  }
+}
+
+.p-contactContentForm-item {
+  display: grid;
+  & + & {
+    margin-top: 16px;
+  }
+  @include MQ('md') {
+    grid-template-columns: 141px 1fr;
+    gap: 30px;
+  }
+}
+
+.p-contactContentForm-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-family: 'yu-mincho-pr6n';
+  font-size: clamp(rem(15), 1vw, rem(16));
+  font-weight: 400;
+  line-height: 2;
+
+  &:has(.p-contactContentForm-labelTextArea) {
+    @include MQ('md') {
+      align-items: flex-start;
+    }
+  }
+}
+
+.p-contactContentForm-label {
+  font-family: 'yu-mincho-pr6n';
+  font-size: clamp(rem(15), 1vw, rem(16));
+  font-weight: 400;
+  line-height: 2;
+}
+
+.p-contactContentForm-labelTextArea {
+  @include MQ('md') {
+    padding-top: 29px;
+  }
+}
+
+.p-contactContentForm-required {
+  font-family: 'yu-mincho-pr6n';
+  font-size: clamp(rem(15), 1vw, rem(16));
+  font-weight: 400;
+  line-height: 2;
+  color: #ee0077;
+}
+
+.p-contactContentForm-detail {
+  margin-top: 10px;
+  width: 100%;
+  font-family: 'yu-mincho-pr6n';
+  font-size: clamp(rem(13), 1vw, rem(16));
+  font-weight: 400;
+  line-height: 2;
+  input,
+  textarea {
+    padding: 10px 16px;
+    font-family: 'yu-mincho-pr6n';
+    font-size: clamp(rem(13), 1vw, rem(16));
+    font-weight: 400;
+    line-height: 2;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    width: 100%;
+
+    &::placeholder {
+      font-family: 'yu-mincho-pr6n';
+      font-size: clamp(rem(13), 1vw, rem(16));
+      font-weight: 400;
+      line-height: 2;
+      color: #bebebe;
+    }
+  }
+  textarea {
+    padding: 29px 16px;
+  }
+  @include MQ('md') {
+    margin-top: 0;
+  }
+}
+
+.p-contactContentForm-textarea {
+  @include MQ('md') {
+    height: 230px;
+  }
+}
+
+.p-contactContentFormPrivacy-agreement {
+  margin-top: 56px;
+  @include MQ('md') {
+    margin-top: 80px;
+  }
+  p {
+    font-family: 'yu-mincho-pr6n';
+    font-size: clamp(rem(14), 1vw, rem(16));
+    font-weight: 400;
+    line-height: 24px;
+    @include MQ('md') {
+      text-align: center;
+      line-height: 2;
+    }
+    a {
+      color: var(--green);
+      text-decoration: underline;
+    }
+  }
+}
+
+.p-contactContentForm-submit {
+  display: grid;
+  place-content: center;
+  background: var(--gradient);
+  width: 275px;
+  height: 50px;
+  border-radius: 40px;
+  color: var(--white);
+  font-family: 'yu-mincho-pr6n';
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: 0.5em;
+  box-shadow: 0px 0px 6px 0px #669e5e66;
+  @include MQ('md') {
+    width: 440px;
+    height: 80px;
+    font-size: rem(20);
+  }
+}
+
+.p-contactContentForm-button {
+  margin-top: 80px;
+  @include MQ('md') {
+    margin-top: 100px;
+  }
+}
+
+@media (any-hover: hover) {
+  .p-contactContentForm-submit:hover {
+    background: var(--black);
+  }
+}

@@ -1,0 +1,94 @@
+@use '../Global/' as *;
+
+.p-info {
+  padding-top: 100px;
+  @include MQ('md') {
+    padding-top: clamp(
+      200px,
+      calc(200px + (435 - 200) * (100vw - 768px) / (1920 - 768)),
+      435px
+    );
+  }
+}
+
+.p-infoContent {
+  margin-top: 36px;
+  @include MQ('md') {
+    margin-top: 70px;
+  }
+}
+
+.p-infoContentTable {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    display: grid;
+    padding: 24px 0;
+    @include MQ('md') {
+      grid-template-columns: 184px 1fr;
+      align-items: start;
+      padding: 32px 0 31px 0;
+    }
+    & + tr {
+      border-top: 1px solid var(--gray);
+    }
+  }
+
+  th {
+    max-width: 58px;
+    @include MQ('md') {
+      max-width: 67px;
+    }
+    span {
+      width: 100%;
+      display: block;
+      text-align: justify;
+      font-family: $font-family;
+      font-size: clamp(rem(14), 1vw, rem(16));
+      font-weight: 700;
+      line-height: 2;
+      margin: var(--leadingTrim) 0;
+    }
+  }
+  td {
+    padding-top: 24px;
+    @include MQ('md') {
+      padding-top: 0;
+    }
+    span,
+    address {
+      display: block;
+      font-family: 'yu-gothic-pr6n', sans-serif;
+      font-size: clamp(rem(13), 1vw, rem(14));
+      font-weight: 500;
+      line-height: 25px;
+      margin: var(--leadingTrim) 0;
+      @include MQ('md') {
+        line-height: 32px;
+      }
+    }
+    address {
+      font-style: normal;
+    }
+    .p-infoContentTableListItem {
+      display: grid;
+      grid-template-columns: clamp(72px, 3vw, 90px) 1fr;
+      & + .p-infoContentTableListItem {
+        margin-top: 12px;
+      }
+    }
+  }
+}
+
+.p-infoContentTableList {
+}
+
+.p-infoContentTableListItem {
+}
+
+.p-infoContentTableListItemHead {
+}
+
+.p-infoContentTableListItemBody {
+}

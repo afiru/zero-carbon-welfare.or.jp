@@ -1,0 +1,101 @@
+@use '../Global/' as *;
+
+.p-contactus {
+  padding: 100px 0;
+  background-image: url('../images/contact_bg.png');
+  background-position: center;
+  background-size: cover;
+  @include MQ('md') {
+    padding: 120px 0 100px 0;
+  }
+}
+
+.p-contactusContent {
+  padding: 64px 20px 60px 20px;
+  background-color: var(--white);
+  border-top-right-radius: 30px;
+  @include MQ('md') {
+    padding: 80px 40px 60px 40px;
+  }
+  @include MQ('xl') {
+    padding: 90px 0;
+  }
+}
+
+.p-contactusContentText {
+  margin-top: 50px;
+  @include MQ('md') {
+    margin-top: 70px;
+  }
+  p {
+    font-family: 'yu-gothic-pr6n', sans-serif;
+    font-size: clamp(rem(14), 1.6vw, rem(16));
+    font-weight: 500;
+    line-height: 2;
+    text-align: center;
+  }
+}
+
+.p-contactusContentButtonWrap {
+  margin-top: 40px;
+  @include MQ('md') {
+    margin-top: 70px;
+  }
+}
+
+.p-contactusContentButton {
+  display: grid;
+  place-content: center;
+  background: var(--gradient);
+  width: 275px;
+  height: 50px;
+  border-radius: 40px;
+  color: var(--white);
+  font-family: 'Benne', serif;
+  font-size: rem(20);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.3em;
+  padding-top: 8px;
+  box-shadow: 0px 0px 6px 0px #669e5e66;
+  @include MQ('md') {
+    width: 440px;
+    height: 80px;
+    font-size: rem(28);
+  }
+}
+
+.p-contactusContentJoinWrap {
+  margin-top: 20px;
+  @include MQ('md') {
+    margin-top: 50px;
+  }
+  p {
+    font-family: 'yu-gothic-pr6n', sans-serif;
+    font-size: clamp(rem(14), 1.6vw, rem(16));
+    font-weight: 500;
+    line-height: 2;
+    text-align: center;
+  }
+  a {
+    color: var(--green);
+    text-decoration: underline;
+  }
+}
+
+@media (any-hover: hover) {
+  .p-contactusContentButton:hover {
+    background: var(--black);
+  }
+}
+
+.p-contactusImage {
+  margin-top: 40px;
+  @include MQ('md') {
+    margin-top: 50px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

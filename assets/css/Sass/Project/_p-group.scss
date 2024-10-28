@@ -1,0 +1,76 @@
+@use '../Global/' as *;
+
+.p-group {
+  padding: 100px 0;
+  position: relative;
+  .l-sectionTitleSub {
+    text-align: center;
+    br {
+      @include MQ('md') {
+        display: none;
+      }
+    }
+  }
+  @include MQ('md') {
+    padding: 200px 0;
+    padding-top: 229px;
+  }
+}
+
+.p-groupContent {
+  margin-top: 60px;
+  @include MQ('md') {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: 335px 1fr;
+    gap: 50px;
+  }
+  @include MQ('lg') {
+    grid-template-columns: 475px 1fr;
+  }
+  @include MQ('xl') {
+    grid-template-columns: 575px 1fr;
+  }
+}
+
+.p-groupContentText {
+  @include MQ('md') {
+    order: 1;
+  }
+  p {
+    font-family: 'yu-gothic-pr6n', sans-serif;
+    font-size: clamp(rem(14), 1vw, rem(16));
+    font-weight: 500;
+    line-height: 26px;
+    text-align: justify;
+    @include MQ('md') {
+      line-height: 36px;
+    }
+  }
+}
+
+.p-groupContentImage {
+  margin-top: 40px;
+  @include MQ('md') {
+    order: 0;
+    margin-top: 0;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.p-groupAsset {
+  img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: calc(577px * (100vw / 1920px));
+    z-index: -1;
+    max-width: 865px;
+    min-height: 250px;
+    object-fit: cover;
+  }
+}

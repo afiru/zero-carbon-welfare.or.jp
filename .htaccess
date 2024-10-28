@@ -1,0 +1,15 @@
+Satisfy any
+order allow,deny
+allow from all
+
+SetEnvIf Request_URI ".*" Ngx_Cache_NoCacheMode=off
+SetEnvIf Request_URI ".*" Ngx_Cache_AllCacheMode
+### BEGIN XPageSpeed - Do not edit the contents of this block! ###
+XPagespeedDisableFilters lazyload_css
+XPagespeedDisableFilters xoptimize_javascript
+XPagespeedDisableFilters lazyload_javascript
+XPagespeed on
+<IfFile /var/xpagespeed/xpagespeed_ctl>
+XPagespeed off
+</IfFile>
+### END XPageSpeed - Do not edit the contents of this block! ###

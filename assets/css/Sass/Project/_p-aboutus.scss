@@ -1,0 +1,109 @@
+@use '../Global/' as *;
+
+.p-aboutus {
+  padding-top: 100px;
+  @include MQ('md') {
+    padding-top: 200px;
+  }
+  .l-sectionTitleText {
+    line-height: 21px;
+    br {
+      @include MQ('md') {
+        display: none;
+      }
+    }
+  }
+}
+
+.p-aboutusContent {
+  margin-top: 60px;
+  position: relative;
+  @include MQ('md') {
+    margin-top: 70px;
+  }
+}
+
+.p-aboutusSkewBg {
+  position: absolute;
+  background-image: url('../images/aboutus_bgSP.png');
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: clamp(
+    700px,
+    calc(700px + (950 - 700) * ((100vw - 375px) / (1920 - 375))),
+    950px
+  );
+  margin: 0 calc(50% - 50vw);
+  z-index: -1;
+  top: -52px;
+  @include MQ('sm') {
+    background-image: url('../images/aboutus_bgPC.png');
+  }
+  @include MQ('md') {
+    top: -17%;
+  }
+  @include MQ('lg') {
+    top: -22%;
+  }
+  @include MQ('xl') {
+    top: -26%;
+  }
+}
+
+.p-aboutusContentInner {
+  display: grid;
+  gap: 40px;
+  @include MQ('md') {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    gap: 50px;
+  }
+}
+
+.p-aboutusContentImage {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  @include MQ('md') {
+    max-width: 575px;
+  }
+}
+
+.p-aboutusContentDetail {
+  display: grid;
+  gap: 40px;
+  @include MQ('md') {
+    gap: 64px;
+    padding-top: 75px;
+    max-width: 575px;
+  }
+}
+
+.p-aboutusContentTitle {
+  p {
+    font-family: 'yu-mincho-pr6n';
+    font-size: clamp(rem(16), 2vw, rem(20));
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+    text-align: justify;
+    color: var(--green);
+    @include MQ('md') {
+      line-height: 36px;
+    }
+  }
+}
+
+.p-aboutusContentText {
+  text-indent: 1em;
+  font-family: 'yu-gothic-pr6n', sans-serif;
+  font-size: clamp(rem(14), 1vw, rem(16));
+  font-weight: 500;
+  line-height: 26px;
+  text-align: justify;
+  @include MQ('md') {
+    line-height: 36px;
+  }
+}

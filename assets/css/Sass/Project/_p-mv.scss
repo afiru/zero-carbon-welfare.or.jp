@@ -1,0 +1,78 @@
+@use '../Global/' as *;
+
+.p-mv {
+  position: relative;
+}
+
+.p-mvVideoSp,
+.p-mvVideoPc {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-mvVideoPc {
+  display: none;
+  @include MQ('lg') {
+    display: block;
+  }
+}
+
+.p-mvVideoSp {
+  display: block;
+  @include MQ('lg') {
+    display: none;
+  }
+}
+
+.p-mvVideoFrame {
+  position: realtive;
+  height: clamp(600px, 23vw + 513px, 960px);
+}
+
+.p-mvContent {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  display: grid;
+  gap: 30px;
+  @include MQ('md') {
+    bottom: 60px;
+    left: 40px;
+    gap: 40px;
+  }
+  @include MQ('lg') {
+    bottom: 90px;
+    left: 80px;
+    gap: 50px;
+  }
+  @include MQ('xl') {
+    bottom: 110px;
+    left: 112px;
+  }
+}
+
+.p-mvText {
+  font-family: 'yu-gothic-pr6n', sans-serif;
+  font-size: clamp(rem(16), 2vw, rem(30));
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  @include MQ('md') {
+    line-height: 45px;
+  }
+}
+
+.p-mvCatchphrase {
+  font-family: 'yu-mincho-pr6n';
+  font-size: clamp(rem(30), 4vw, rem(60));
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0.05em;
+  text-align: justify;
+  color: var(--white);
+  @include MQ('md') {
+    line-height: 90px;
+  }
+}

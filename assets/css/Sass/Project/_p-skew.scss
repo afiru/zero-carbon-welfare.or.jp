@@ -1,0 +1,26 @@
+@use '../Global/' as *;
+
+.p-skewWrap {
+  position: relative;
+  transform: skewY(-5deg);
+  background-image: url('../images/skew_bg01.png');
+  background-position: top left;
+  background-size: cover;
+  padding: 100px 0;
+  @include MQ('md') {
+    padding: 215px 0;
+    background-image: url('../images/skew_bg02.png');
+    background-position: center;
+  }
+
+  section {
+    scroll-margin-top: calc(
+      100px + 5vw
+    ); /* ヘッダー高さ + skewによる追加マージン */
+  }
+}
+
+.p-skewContent {
+  position: relative;
+  transform: skewY(5deg);
+}

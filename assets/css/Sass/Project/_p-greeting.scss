@@ -1,0 +1,104 @@
+@use '../Global/' as *;
+
+.p-greeting {
+  padding: 100px 0;
+  padding-bottom: 120px;
+  @include MQ('md') {
+    padding: 200px 0;
+    padding-bottom: 229px;
+  }
+}
+
+.p-greetingContent {
+  margin-top: 60px;
+  @include MQ('md') {
+    margin-top: 70px;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 230px 1fr;
+    align-items: start;
+  }
+}
+
+.p-greetingContentImage {
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  img {
+    max-width: clamp(171px, 3vw, 230px);
+    height: auto;
+  }
+}
+
+.p-greetingContentWrap {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  @include MQ('md') {
+    margin-top: 0;
+    gap: 0;
+  }
+}
+
+.p-greetingContentTitle {
+  p {
+    font-family: 'yu-mincho-pr6n';
+    font-size: clamp(rem(16), 2vw, rem(20));
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+    text-align: justify;
+    color: var(--green);
+    @include MQ('md') {
+      line-height: 36px;
+    }
+  }
+}
+
+.p-greetingContentText {
+  @include MQ('md') {
+    margin-top: 64px;
+  }
+  p {
+    font-family: 'yu-gothic-pr6n', sans-serif;
+    font-size: clamp(rem(14), 1vw, rem(16));
+    font-weight: 500;
+    line-height: 26px;
+    text-align: justify;
+    @include MQ('md') {
+      line-height: 36px;
+    }
+  }
+}
+
+.p-greetingContentAnnotation {
+  @include MQ('md') {
+    margin-top: 56px;
+  }
+  p {
+    font-family: 'yu-gothic-pr6n', sans-serif;
+    font-size: clamp(rem(11), 1vw, rem(14));
+    font-weight: 500;
+    line-height: 22px;
+    text-align: left;
+    @include MQ('md') {
+      line-height: 30px;
+    }
+  }
+}
+
+.p-greetingcontentName {
+  @include MQ('md') {
+    margin-top: 55px;
+  }
+  p {
+    font-family: 'yu-mincho-pr6n';
+    font-size: clamp(rem(18), 4vw, rem(24));
+    font-weight: 600;
+    line-height: 2;
+    letter-spacing: 0.05em;
+    text-align: right;
+  }
+}

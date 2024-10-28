@@ -1,0 +1,56 @@
+@use '../Global/' as *;
+
+.p-navSkewBg {
+  position: absolute;
+  background-image: url('../images/nav_bgSP.png');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: clamp(
+    140px,
+    calc(140px + (606 - 140) * ((100vw - 375px) / (1920 - 375))),
+    606px
+  );
+  // margin: 0 calc(50% - 50vw);
+  z-index: -1;
+  @include MQ('md') {
+    background-image: url('../images/nav_bgPC.png');
+  }
+}
+
+.p-navWrapper {
+  @include MQ('md') {
+    padding-top: 61px;
+    max-width: 847px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.p-navList {
+  display: none;
+  @include MQ('md') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.p-navListItem {
+  @include MQ('md') {
+    font-family: 'yu-mincho-pr6n';
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: var(--leadingTrim) 0;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+@media (any-hover: hover) {
+  .p-navListItemLink:hover {
+    color: var(--green);
+    text-decoration: underline;
+  }
+}

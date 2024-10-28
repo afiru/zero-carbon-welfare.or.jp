@@ -1,0 +1,144 @@
+@use '../Global/' as *;
+
+.l-footer {
+  background: var(--mosgreen2);
+  color: var(--white);
+  padding: 60px 0;
+  @include MQ('md') {
+    padding: 100px 0 40px 0;
+  }
+}
+
+.l-footerWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 84%;
+  & > * + * {
+    margin-top: 40px;
+    @include MQ('md') {
+      margin-top: 70px;
+    }
+  }
+  @include MQ('md') {
+    width: 90%;
+  }
+}
+
+.l-footerInner {
+  @include MQ('md') {
+    display: grid;
+    grid-template-columns: 1fr 55%;
+    gap: 40px;
+  }
+  @include MQ('xl') {
+    grid-template-columns: 1fr 638px;
+    gap: 75px;
+  }
+  & > * + * {
+    margin-top: 40px;
+    @include MQ('md') {
+      margin-top: 0;
+    }
+  }
+}
+
+.l-footerHeadTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: clamp(rem(16), 2vw, rem(20));
+  font-weight: 500;
+  line-height: 1.5;
+  @include MQ('md') {
+    gap: 6px;
+  }
+}
+
+.l-footerHeadTitleSub {
+  font-family: Inter;
+  font-size: clamp(rem(10), 1vw, rem(12));
+  font-weight: 300;
+  line-height: 1.21;
+  @include MQ('md') {
+    letter-spacing: 0.04em;
+  }
+}
+
+.l-footerContent {
+  margin-top: 50px;
+  @include MQ('md') {
+    margin-top: 60px;
+  }
+  & > * + * {
+    margin-top: 22px;
+    @include MQ('md') {
+      margin-top: 30px;
+    }
+  }
+}
+
+.l-footerContentItem {
+  display: grid;
+  gap: 20px;
+  @include MQ('md') {
+    gap: 0;
+    grid-template-columns: 101px 1fr;
+  }
+}
+
+.l-footerContentItemTitle {
+  font-size: clamp(rem(14), 1.6vw, rem(16));
+  font-weight: bold;
+}
+
+.l-footerContentItemText {
+  font-family: 'yu-gothic-pr6n', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(rem(12), 1.3vw, rem(15));
+  line-height: 20px;
+  @include MQ('md') {
+    line-height: 2;
+  }
+}
+
+.l-footerContentArticle {
+  display: grid;
+  p {
+    font-family: 'yu-gothic-pr6n', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(rem(12), 1.3vw, rem(15));
+    line-height: 2;
+    @include MQ('lg') {
+      margin-top: 4px;
+    }
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+
+.l-footerFrame {
+  --n: 40; /* 高さ */
+  --d: 63; /* 幅 */
+  @include MQ('xl') {
+    --n: 415; /* 高さ */
+    --d: 638; /* 幅 */
+  }
+}
+
+.l-footerCopy {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: clamp(rem(10), 1vw, rem(12));
+  line-height: 1.2;
+  @include MQ('md') {
+    text-align: center;
+  }
+  br {
+    @include MQ('md') {
+      display: none;
+    }
+  }
+}

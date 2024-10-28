@@ -1,0 +1,228 @@
+@use '../Global/' as *;
+
+.l-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: background-color 0.4s;
+  &.is-main {
+    background-color: var(--white);
+    .l-headerNavigationButtonLine {
+      background-color: var(--black);
+    }
+    .l-headerCtaButton {
+      color: var(--white);
+      background: var(--gradient);
+    }
+    .l-headerCtaButtonIcon {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .l-headerCtaButtonIcon-w {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+    .l-headerCtaButton:hover {
+      color: var(--white);
+      opacity: 0.75;
+    }
+  }
+}
+
+.l-headerWrapper {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include MQ('md') {
+    padding: 20px 30px;
+  }
+  @include MQ('lg') {
+    padding: 29px 30px;
+  }
+}
+
+.l-headerNav {
+  position: fixed;
+  top: 52px;
+  right: 10px;
+  padding: 20px;
+  z-index: 101;
+  background-color: var(--white);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+  @include MQ('md') {
+    padding: 40px;
+    right: 30px;
+    top: 82px;
+    width: 399px;
+    border-radius: 20px;
+  }
+  @include MQ('xl') {
+    top: 131px;
+  }
+
+  &.on {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.l-headerNavList {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  @include MQ('md') {
+    gap: 36px;
+  }
+}
+
+.l-headerNavListItem {
+  font-family: 'Yu-mincho-pr6n', serif;
+  font-size: clamp(rem(13), 1.5vw, rem(16));
+  font-weight: 400;
+  line-height: 2;
+  margin: var(--leadingTrim) 0;
+
+  a {
+    display: block;
+  }
+}
+
+.l-headerLogo {
+  width: clamp(270px, 13.5vw + 219px, 479px);
+  height: clamp(22px, 1.4vw + 17px, 43px);
+  a {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.l-headerCtaWrap {
+  @include MQ('md') {
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    gap: 31px;
+    align-items: center;
+  }
+}
+
+.l-headerCtaButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Yu-gothic-pr6n', sans-serif;
+  font-size: rem(15);
+  font-weight: 500;
+  line-height: 21.56px;
+  color: var(--black);
+  background-color: var(--white);
+  width: 328px;
+  height: 41px;
+  border-radius: 140px;
+  @include MQ('md') {
+    display: flex;
+  }
+}
+
+.l-headerCtaButtonIcon {
+  opacity: 1;
+  visibility: visible;
+}
+
+.l-headerCtaButtonIcon-w {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.l-headerNavigationButton {
+  color: var(--black);
+  width: 22px;
+  height: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  @include MQ('md') {
+    width: 40px;
+    height: 21px;
+  }
+
+  &.on {
+    .l-headerNavigationButtonLine {
+      transform: rotate(-45deg);
+      @include MQ('md') {
+        transform: rotate(-45deg) translate(-6px, 6px);
+      }
+      &::before {
+        top: 0;
+        transform: rotate(90deg);
+      }
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.l-headerNavigationButtonLine {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: var(--white);
+  transition: all 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+  &::before {
+    transition: all 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+    position: absolute;
+    top: 4px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: inherit;
+    content: '';
+    @include MQ('md') {
+      top: 11px;
+    }
+  }
+  &::after {
+    transition: all 0.1s cubic-bezier(0.33, 1, 0.68, 1);
+    position: absolute;
+    top: 8px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: inherit;
+    content: '';
+    @include MQ('md') {
+      top: 22px;
+    }
+  }
+}
+
+@media (any-hover: hover) {
+  .l-headerNavListItemLink:hover {
+    color: var(--green);
+  }
+  .l-headerLogo a:hover {
+    opacity: 0.75;
+  }
+  .l-headerCtaButton:hover {
+    color: var(--green);
+  }
+}
