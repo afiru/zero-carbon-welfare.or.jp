@@ -1,0 +1,457 @@
+@charset "UTF-8";
+/* ==========================================================================
+Reset
+========================================================================== */
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+Rules
+========================================================================== */
+.d_flex {
+  display: flex;
+}
+
+.d_block {
+  display: block;
+}
+
+.d_none {
+  display: none;
+}
+
+.d_contents {
+  display: contents;
+}
+
+.d_inline {
+  display: inline;
+}
+
+.d_grid {
+  display: grid;
+}
+
+.d_inlineBlock {
+  display: inline-block;
+}
+
+.d_inlineFlex {
+  display: inline-flex;
+}
+
+.d_inlineTable {
+  display: inline-table;
+}
+
+/* ==========================================================================
+justify-content
+========================================================================== */
+.j_between {
+  justify-content: space-between;
+}
+
+.j_start {
+  justify-content: flex-start;
+}
+
+.j_end {
+  justify-content: flex-end;
+}
+
+.j_center {
+  justify-content: center;
+}
+
+.j_around {
+  justify-content: space-around;
+}
+
+.j_baseline {
+  justify-content: space-baseline;
+}
+
+.j_firstBaseline {
+  justify-content: first baseline;
+}
+
+.j_firstBaseline {
+  justify-content: last baseline;
+}
+
+.j_left {
+  justify-content: left;
+}
+
+.j_right {
+  justify-content: right;
+}
+
+.j_safe {
+  justify-content: safe;
+}
+
+/* ==========================================================================
+align-items
+========================================================================== */
+.ali_baseline {
+  align-items: baseline;
+}
+
+.ali_center {
+  align-items: center;
+}
+
+.ali_end {
+  align-items: flex-end;
+}
+
+.ali_start {
+  align-items: flex-start;
+}
+
+.ali_stretch {
+  align-items: stretch;
+}
+
+.ali_unset {
+  align-items: unset;
+}
+
+/* ==========================================================================
+align-content
+========================================================================== */
+.alc_center {
+  align-content: center;
+}
+
+.alc_end {
+  align-content: flex-end;
+}
+
+.alc_around {
+  align-content: space-around;
+}
+
+.alc_between {
+  align-content: space-between;
+}
+
+.alc_stretch {
+  align-content: stretch;
+}
+
+.alc_unset {
+  align-content: unset;
+}
+
+/* ==========================================================================
+row
+========================================================================== */
+.row {
+  flex-flow: row wrap;
+}
+
+/* ==========================================================================
+Common
+========================================================================== */
+/* ==========================================================================
+Layout
+========================================================================== */
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+/* ==========================================================================
+Settings
+========================================================================== */
+/* ==========================================================================
+breakPoint
+========================================================================== */
+/* ==========================================================================
+_wapSettings
+========================================================================== */
+/* ==========================================================================
+_widthSettings
+========================================================================== */
+/* ==========================================================================
+_heightSettings
+========================================================================== */
+/* ==========================================================================
+_positionSettings
+========================================================================== */
+/* ==========================================================================
+borderRadius
+========================================================================== */
+/* ==========================================================================
+_marginSettings
+========================================================================== */
+/* ==========================================================================
+_paddingSettings
+========================================================================== */
+/* ==========================================================================
+fonts
+========================================================================== */
+/* ==========================================================================
+_lineHeight
+========================================================================== */
+/* ==========================================================================
+_letterspace
+========================================================================== */
+/* ==========================================================================
+ボタンタイプ
+========================================================================== */
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.p-newsContent02 {
+  margin-top: 107px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 1160px) {
+  .p-newsContent02 {
+    margin-top: 12.73%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  .p-newsContent02 {
+    margin-top: 58px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 1160px) {
+  .p-newsContent02 {
+    margin-top: 17.31%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.p-newsContentAccWrap {
+  cursor: pointer;
+}
+.p-newsContentAccWrap:hover {
+  opacity: 0.6;
+}
+
+.btnPdfBoxLxn {
+  width: 468px;
+  margin-top: 80px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 1160px) {
+  .btnPdfBoxLxn {
+    width: 55.71%;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .btnPdfBoxLxn {
+    margin-top: 9.52%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  .btnPdfBoxLxn {
+    width: 285px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 1160px) {
+  .btnPdfBoxLxn {
+    width: 85.07%;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 1160px) {
+  .btnPdfBoxLxn {
+    margin-top: 11.94%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.btnPdfBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  line-height: normal;
+  letter-spacing: 0em;
+  text-indent: 0em;
+  font-weight: 600;
+  font-family: "yu-mincho-pr6n";
+  text-decoration: none;
+  background: #669E5E;
+  color: #fff;
+  border-radius: 4px;
+  aspect-ratio: 468/59;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+@media screen and (max-width: 1160px) {
+  .btnPdfBox {
+    font-size: 1.724137931vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .btnPdfBox {
+    line-height: normal;
+    letter-spacing: 0em;
+    text-indent: 0em;
+    aspect-ratio: 285/50;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 767px) {
+  .btnPdfBox {
+    font-size: 4.2666666667vw;
+  }
+}
+
+/* ==========================================================================
+Component
+========================================================================== */
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 2022/09/08, 15:33:59
+    Author     : SPG-1105
+*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 2022/09/08, 15:34:06
+    Author     : SPG-1105
+*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 2022/09/08, 15:33:53
+    Author     : SPG-1105
+*//*# sourceMappingURL=common.css.map */

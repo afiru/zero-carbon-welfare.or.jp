@@ -1,0 +1,112 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../Functions/mixin" as mi;
+
+/* ==========================================================================
+Library
+========================================================================== */
+body {
+    font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+
+    color: #323232;
+    font-weight: 500;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+body {
+
+    input,
+    textarea,
+    button {
+        font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+
+        font-weight: 500;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        line-height: 1;
+        font-weight: 500;
+    }
+}
+
+#mintyou,
+.mintyou,
+.mincho {
+    font-family: 'Shippori Mincho B1', serif;
+
+}
+
+.t_center {
+    text-align: center;
+}
+
+.text_justify {
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+#mintyou,
+.mintyou {
+    font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", HGS 明朝 E, Meiryo, serif;
+}
+
+.entitle {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cormorant {
+    font-family: 'Cormorant', serif;
+}
+
+.sawamin {
+    font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.Bebas {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.ShipporiMincho {
+    font-family: 'Shippori Mincho B1', serif;
+}
+
+.Garamond {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.cp {
+    font-family: 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif, Verdana;
+}
+
+.bellefair {
+    font-family: 'Bellefair', serif;
+}
+
+.staatliches {
+    font-family: 'Staatliches', cursive;
+
+}
+
+.tj {
+    text-indent: -9999px;
+    text-align: left;
+    overflow: hidden;
+    display: block;
+    font-size: 0.1em;
+}

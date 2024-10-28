@@ -1,0 +1,84 @@
+/* ==========================================================================
+justify-content
+========================================================================== */
+.j_between {
+    justify-content: space-between;    
+}
+.j_start {
+    justify-content: flex-start;
+}
+.j_end {
+    justify-content: flex-end;
+}
+.j_center {
+    justify-content: center;
+}
+.j_around {
+    justify-content: space-around;
+}
+.j_baseline {
+    justify-content: space-baseline;
+}
+.j_firstBaseline {
+    justify-content: first baseline;
+}
+.j_firstBaseline {
+    justify-content: last baseline;
+}
+.j_left {
+    justify-content: left;
+}
+.j_right {
+    justify-content: right;
+}
+.j_safe {
+    justify-content: safe;
+}
+/* ==========================================================================
+align-items
+========================================================================== */
+.ali_baseline {
+    align-items: baseline;
+}
+.ali_center {
+    align-items: center;
+}
+.ali_end {
+    align-items: flex-end;
+}
+.ali_start {
+    align-items: flex-start;
+}
+.ali_stretch {
+    align-items: stretch;
+}
+.ali_unset {
+    align-items: unset;
+}
+/* ==========================================================================
+align-content
+========================================================================== */
+.alc_center {
+    align-content: center;
+}
+.alc_end {
+    align-content: flex-end;
+}
+.alc_around {
+    align-content: space-around;
+}
+.alc_between {
+    align-content: space-between;
+}
+.alc_stretch {
+    align-content: stretch;
+}
+.alc_unset {
+    align-content: unset;
+}
+/* ==========================================================================
+row
+========================================================================== */
+.row {
+    flex-flow: row wrap;
+}

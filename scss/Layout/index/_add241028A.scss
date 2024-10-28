@@ -1,0 +1,59 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.p-newsContent02 {
+    @include mi.marginPercent(840, 107, auto, 0, auto);
+
+    @include mi.mq(sp) {
+        @include mi.marginPercent(335, 58, auto, 0, auto);
+    }
+}
+
+.p-newsContentAccWrap {
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.btnPdfBoxLxn {
+    @include mi.ontenerWidth(840, 468);
+    @include mi.marginPercent(840, 80, auto, 0, auto);
+
+    @include mi.mq(sp) {
+        @include mi.ontenerWidth(335, 285);
+        @include mi.marginPercent(335, 40, auto, 0, auto);
+    }
+}
+
+.btnPdfBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mi.fontSizePc(20);
+    @include mi.lineheight(auto, auto);
+    @include mi.letterSpacing(0);
+    font-weight: 600;
+    font-family: "yu-mincho-pr6n";
+    text-decoration: none;
+    background: #669E5E;
+    color: #fff;
+    border-radius: 4px;
+    aspect-ratio: 468 / 59;
+    color: #fff !important;
+    text-decoration: none !important;
+
+    @include mi.mq(sp) {
+        @include mi.fontSizeSp(16);
+        @include mi.lineheight(auto, auto);
+        @include mi.letterSpacing(0);
+        aspect-ratio: 285 / 50;
+    }
+}

@@ -1,0 +1,655 @@
+@use "sass:map";
+@use "sass:math";
+/* ==========================================================================
+Settings
+========================================================================== */
+//■横幅の設定
+$pcSize: 1161px;
+$tabSize: 1160px;
+$tabTateSize: 768px; //ここは不動だと思う
+$spSize: 767px; //ここは不動だと思う
+//ここも変更してほしい
+$pcSizePxNone: 1161;
+$tabSizePxNone: 1160;
+$tabTateSizePxNone: 769; //ここは不動だと思う
+$spSizePxNone: 768; //ここは不動だと思う
+
+/* ==========================================================================
+breakPoint
+========================================================================== */
+$breakpoints: ("max1800": "(max-width: 1800px)",
+    "max1750": "(max-width: 1750px)",
+    "max1700": "(max-width: 1700px)",
+    "max1650": "(max-width: 1650px)",
+    "max1600": "(max-width: 1600px)",
+    "max1550": "(max-width: 1550px)",
+    "max1500": "(max-width: 1500px)",
+    "max1450": "(max-width: 1450px)",
+    "max1400": "(max-width: 1400px)",
+    "max1350": "(max-width: 1350px)",
+    "max1300": "(max-width: 1300px)",
+    "max1250": "(max-width: 1250px)",
+    "max1200": "(max-width: 1200px)",
+    "max1150": "(max-width: 1150px)",
+    "max1100": "(max-width: 1100px)",
+    "max1050": "(max-width: 1050px)",
+    "max1000": "(max-width: 1000px)",
+    "max950": "(max-width: 950px)",
+    "max900": "(max-width: 900px)",
+    "max850": "(max-width: 850px)",
+    "max800": "(max-width: 800px)",
+    "max750": "(max-width: 750px)",
+    "max700": "(max-width: 700px)",
+    /* ここから要変更必要箇所 */
+    "pc": "(max-width: #{$pcSize})",
+    "tab": "(max-width: #{$tabSize})",
+    "tabTate": "(max-width: 900px)",
+    "sp": "(max-width: #{$spSize})",
+
+);
+
+@mixin mq($breakpoint) {
+    @media screen and #{map-get($breakpoints, $breakpoint)} {
+        // ※１
+        @content; // ※２
+    }
+}
+
+/* ==========================================================================
+_wapSettings
+========================================================================== */
+@mixin wapSettings() {
+    width: $pcSize;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq(tab) {
+        width: 98%;
+    }
+
+    @include mq(sp) {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================================================
+_widthSettings
+========================================================================== */
+@mixin ontener_width($parentPxWidth, $pxWidth) {
+    width: $pxWidth+px;
+
+    @include mq(tab) {
+        width: floor((math.div($pxWidth, $parentPxWidth) * 10000%)) * 0.01;
+    }
+
+}
+//横幅Tabvw
+@mixin ontener_width02($parentPxWidth, $pxWidth) {
+    width: $pxWidth+px;
+
+    @include mq(tab) {
+        width: floor((math.div($pxWidth, $parentPxWidth) * 10000vw)) * 0.01;
+    }
+}
+
+@mixin ontenerWidth($parentPxWidth, $pxWidth) {
+    width: $pxWidth+px;
+
+    @include mq(tab) {
+        width: floor((math.div($pxWidth, $parentPxWidth) * 10000%)) * 0.01;
+    }
+}
+
+@mixin ontenerWVw($parentPxWidth, $pxWidth) {
+    width: floor((math.div($pxWidth, $parentPxWidth) * 10000vw)) * 0.01;
+}
+
+@mixin widthVw($parentPxWidth, $pxWidth) {
+    width: (math.div($pxWidth, $parentPxWidth) * 10000vw) * 0.01;
+
+    img {
+        max-width: $pxWidth + px;
+    }
+}
+
+@mixin widthVwSP($sppxWidth) {
+    width: (math.div($sppxWidth, 375) * 10000vw) * 0.01;
+
+    img {
+        max-width: $sppxWidth + px;
+    }
+}
+
+@mixin widthCalc($wap, $size) {
+    width: calc($wap - $size);
+}
+
+/* ==========================================================================
+_heightSettings
+========================================================================== */
+@mixin heightVw($parentPxWidth, $pxheight) {
+    height: (math.div($pxheight, $parentPxWidth) * 10000vw) * 0.01;
+}
+
+@mixin heightVwSp($pxheight) {
+    height: (math.div($pxheight, 375) * 10000vw) * 0.01;
+}
+
+/* ==========================================================================
+_positionSettings
+========================================================================== */
+@mixin contentSet() {
+    content: '';
+    display: block;
+}
+
+@mixin positionWHCenter() {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+@mixin positionWCenter() {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@mixin positionHCenter() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+@mixin posionTop($pxouterheight, $pxposion) {
+    top: ((math.div($pxposion, $pxouterheight)) * 10000%) * 0.01;
+}
+
+@mixin posionBottom($pxouterheight, $pxposion) {
+    bottom: ((math.div($pxposion, $pxouterheight)) * 10000%) * 0.01;
+}
+
+@mixin posionLeft($pxouterwidht, $pxposion) {
+    left: ((math.div($pxposion, $pxouterwidht)) * 10000%) * 0.01;
+}
+
+@mixin posionRight($pxouterwidht, $pxposion) {
+    right: ((math.div($pxposion, $pxouterwidht)) * 10000%) * 0.01;
+}
+
+/* ==========================================================================
+borderRadius
+========================================================================== */
+@mixin kadomaru($radius) {
+    border-radius: $radius;
+    /* CSS3草案 */
+    -webkit-border-radius: $radius;
+    /* Safari,Google Chrome用 */
+    -moz-border-radius: $radius;
+    /* Firefox用 */
+}
+
+@mixin radius($topLeft, $topRight, $btmLeft, $btmRight) {
+    border-top-left-radius: $topLeft;
+    border-top-right-radius: $topRight;
+    border-bottom-left-radius: $btmLeft;
+    border-bottom-right-radius: $btmRight;
+}
+
+/* ==========================================================================
+_marginSettings
+========================================================================== */
+//@include marginPercent(横幅基準値, margin-top（px）, margin-left（px）, margin-bottom(px), margin-bottom(px));
+@mixin marginPercent($parentPxWidth, $mTop, $mRight, $mBottom, $mLeft) {
+    @if $mLeft==auto and $mRight==auto {
+        margin-top: $mTop + 0px;
+        margin-bottom: $mBottom + 0px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include mq(tab) {
+            margin-top: floor((math.div($mTop, $parentPxWidth) * 10000%)) * 0.01;
+            margin-bottom: floor((math.div($mBottom, $parentPxWidth) * 10000%)) * 0.01;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    @else if $mLeft==auto {
+        margin-top: $mTop + 0px;
+        margin-bottom: $mBottom + 0px;
+        margin-left: auto;
+        margin-right: $mRight + 0px;
+
+        @include mq(tab) {
+            margin-top: floor((math.div($mTop, $parentPxWidth) * 10000%)) * 0.01;
+            margin-bottom: floor((math.div($mBottom, $parentPxWidth) * 10000%)) * 0.01;
+            margin-left: auto;
+            margin-right: floor((math.div($mRight, $parentPxWidth) * 10000%)) * 0.01;
+        }
+    }
+
+    @else if $mRight==auto {
+        margin-top: $mTop + 0px;
+        margin-bottom: $mBottom + 0px;
+        margin-left: $mLeft + 0px;
+        margin-right: auto;
+
+        @include mq(tab) {
+            @include mq(tab) {
+                margin-top: floor((math.div($mTop, $parentPxWidth) * 10000%)) * 0.01;
+                margin-bottom: floor((math.div($mBottom, $parentPxWidth) * 10000%)) * 0.01;
+                margin-left: floor((math.div($mLeft, $parentPxWidth) * 10000%)) * 0.01;
+                margin-right: auto;
+            }
+        }
+    }
+
+    @else {
+        margin-top: $mTop + 0px;
+        margin-bottom: $mBottom + 0px;
+        margin-left: $mLeft + 0px;
+        margin-right: $mRight + 0px;
+
+        @include mq(tab) {
+            margin: floor((math.div($mTop, $parentPxWidth) * 10000%)) * 0.01 floor((math.div($mRight, $parentPxWidth) * 10000%)) * 0.01 floor((math.div($mBottom, $parentPxWidth) * 10000%)) * 0.01 floor((math.div($mLeft, $parentPxWidth) * 10000%)) * 0.01;
+        }
+    }
+}
+//マージンTabvw
+@mixin marginPercent02($parentPxWidth, $mTop, $mRight, $mBottom, $mLeft) {
+    @if $mLeft==auto and $mRight==auto {
+        margin-top: $mTop + 0px;
+        margin-bottom: $mBottom + 0px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include mq(tab) {
+            margin-top: floor((math.div($mTop, $parentPxWidth) * 10000vw)) * 0.01;
+            margin-bottom: floor((math.div($mBottom, $parentPxWidth) * 10000vw)) * 0.01;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    @else if $mLeft==auto {
+        margin-top: $mTop + 0px;
+        margin-bottom: $mBottom + 0px;
+        margin-left: auto;
+        margin-right: $mRight + 0px;
+
+        @include mq(tab) {
+            margin-top: floor((math.div($mTop, $parentPxWidth) * 10000vw)) * 0.01;
+            margin-bottom: floor((math.div($mBottom, $parentPxWidth) * 10000vw)) * 0.01;
+            margin-left: auto;
+            margin-right: floor((math.div($mRight, $parentPxWidth) * 10000vw)) * 0.01;
+        }
+    }
+
+    @else if $mRight==auto {
+        margin-top: $mTop + 0px;
+        margin-bottom: $mBottom + 0px;
+        margin-left: $mLeft + 0px;
+        margin-right: auto;
+
+        @include mq(tab) {
+            @include mq(tab) {
+                margin-top: floor((math.div($mTop, $parentPxWidth) * 10000vw)) * 0.01;
+                margin-bottom: floor((math.div($mBottom, $parentPxWidth) * 10000vw)) * 0.01;
+                margin-left: floor((math.div($mLeft, $parentPxWidth) * 10000vw)) * 0.01;
+                margin-right: auto;
+            }
+        }
+    }
+
+    @else {
+        margin-top: $mTop + 0px;
+        margin-bottom: $mBottom + 0px;
+        margin-left: $mLeft + 0px;
+        margin-right: $mRight + 0px;
+
+        @include mq(tab) {
+            margin: floor((math.div($mTop, $parentPxWidth) * 10000vw)) * 0.01 floor((math.div($mRight, $parentPxWidth) * 10000vw)) * 0.01 floor((math.div($mBottom, $parentPxWidth) * 10000vw)) * 0.01 floor((math.div($mLeft, $parentPxWidth) * 10000vw)) * 0.01;
+        }
+    }
+}
+@mixin marginVw($wap, $mTop, $mRight, $mBottom, $mLeft) {
+    @if $mLeft==auto and $mRight==auto {
+        margin-top: (math.div($mTop, $wap) * 10000vw) * 0.01;
+        margin-bottom: (math.div($mBottom, $wap) * 10000vw) * 0.01;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @else if $mLeft==auto {
+        margin-top: (math.div($mTop, $wap) * 10000vw) * 0.01;
+        margin-bottom: (math.div($mBottom, $wap) * 10000vw) * 0.01;
+        margin-left: auto;
+        margin-right: (math.div($mRight, $wap) * 10000vw) * 0.01;
+    }
+
+    @else if $mRight==auto {
+        margin-top: (math.div($mTop, $wap) * 10000vw) * 0.01;
+        margin-bottom: (math.div($mBottom, $wap) * 10000vw) * 0.01;
+        margin-left: (math.div($mLeft, $wap) * 10000vw) * 0.01;
+        margin-right: auto;
+    }
+
+    @else {
+        margin: (math.div($mTop, $wap) * 10000vw) * 0.01 (math.div($mRight, $wap) * 10000vw) * 0.01 (math.div($mBottom, $wap) * 10000vw) * 0.01 (math.div($mLeft, $wap) * 10000vw) * 0.01;
+    }
+}
+
+@mixin marginVwSp($mTop, $mRight, $mBottom, $mLeft) {
+    @if $mLeft==auto and $mRight==auto {
+        margin-top: (math.div($mTop, 375) * 10000vw) * 0.01;
+        margin-bottom: (math.div($mBottom, 375) * 10000vw) * 0.01;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @else if $mLeft==auto {
+        margin-top: (math.div($mTop, 375) * 10000vw) * 0.01;
+        margin-bottom: (math.div($mBottom, 375) * 10000vw) * 0.01;
+        margin-left: auto;
+        margin-right: (math.div($mRight, 375) * 10000vw) * 0.01;
+    }
+
+    @else if $mRight==auto {
+        margin-top: (math.div($mTop, 375) * 10000vw) * 0.01;
+        margin-bottom: (math.div($mBottom, 375) * 10000vw) * 0.01;
+        margin-left: (math.div($mLeft, 375) * 10000vw) * 0.01;
+        margin-right: auto;
+    }
+
+    @else {
+        margin: (math.div($mTop, 375) * 10000vw) * 0.01 (math.div($mRight, 375) * 10000vw) * 0.01 (math.div($mBottom, 375) * 10000vw) * 0.01 (math.div($mLeft, 375) * 10000vw) * 0.01;
+    }
+}
+
+/* ==========================================================================
+_paddingSettings
+========================================================================== */
+@mixin paddingPercent($parentPxWidth, $mTop, $mRight, $mBottom, $mLeft) {
+    @if $mLeft==auto or $mRight==auto {
+        padding-top: $mTop + 0px;
+        padding-bottom: $mBottom + 0px;
+        padding-left: 0 + 0px;
+        padding-right: 0 + 0px;
+
+        @include mq(tab) {
+            padding-top: floor((math.div($mTop, $parentPxWidth) * 10000%)) * 0.01;
+            padding-bottom: floor((math.div($mBottom, $parentPxWidth) * 10000%)) * 0.01;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+    }
+
+    @else {
+        padding-top: $mTop + 0px;
+        padding-bottom: $mBottom + 0px;
+        padding-left: $mLeft + 0px;
+        padding-right: $mRight + 0px;
+
+        @include mq(tab) {
+            padding: floor((math.div($mTop, $parentPxWidth) * 10000%)) * 0.01 floor((math.div($mRight, $parentPxWidth) * 10000%)) * 0.01 floor((math.div($mBottom, $parentPxWidth) * 10000%)) * 0.01 floor((math.div($mLeft, $parentPxWidth) * 10000%)) * 0.01;
+        }
+    }
+}
+@mixin paddingPercent02($parentPxWidth, $mTop, $mRight, $mBottom, $mLeft) {
+    @if $mLeft==auto or $mRight==auto {
+        padding-top: $mTop + 0px;
+        padding-bottom: $mBottom + 0px;
+        padding-left: 0 + 0px;
+        padding-right: 0 + 0px;
+
+        @include mq(tab) {
+            padding-top: floor((math.div($mTop, $parentPxWidth) * 10000vw)) * 0.01;
+            padding-bottom: floor((math.div($mBottom, $parentPxWidth) * 10000vw)) * 0.01;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+    }
+
+    @else {
+        padding-top: $mTop + 0px;
+        padding-bottom: $mBottom + 0px;
+        padding-left: $mLeft + 0px;
+        padding-right: $mRight + 0px;
+
+        @include mq(tab) {
+            padding: floor((math.div($mTop, $parentPxWidth) * 10000vw)) * 0.01 floor((math.div($mRight, $parentPxWidth) * 10000vw)) * 0.01 floor((math.div($mBottom, $parentPxWidth) * 10000vw)) * 0.01 floor((math.div($mLeft, $parentPxWidth) * 10000vw)) * 0.01;
+        }
+    }
+}
+@mixin paddingVw($wap, $mTop, $mRight, $mBottom, $mLeft) {
+    @if $mLeft==auto and $mRight==auto {
+        padding-top: (math.div($mTop, $wap) * 10000vw) * 0.01;
+        padding-bottom: (math.div($mBottom, $wap) * 10000vw) * 0.01;
+        padding-left: auto;
+        padding-right: auto;
+    }
+
+    @else if $mLeft==auto {
+        padding-top: (math.div($mTop, $wap) * 10000vw) * 0.01;
+        padding-bottom: (math.div($mBottom, $wap) * 10000vw) * 0.01;
+        padding-left: auto;
+        padding-right: (math.div($mRight, $wap) * 10000vw) * 0.01;
+    }
+
+    @else if $mRight==auto {
+        padding-top: (math.div($mTop, $wap) * 10000vw) * 0.01;
+        padding-bottom: (math.div($mBottom, $wap) * 10000vw) * 0.01;
+        padding-left: (math.div($mLeft, $wap) * 10000vw) * 0.01;
+        padding-right: auto;
+    }
+
+    @else {
+        padding: (math.div($mTop, $wap) * 10000vw) * 0.01 (math.div($mRight, $wap) * 10000vw) * 0.01 (math.div($mBottom, $wap) * 10000vw) * 0.01 (math.div($mLeft, $wap) * 10000vw) * 0.01;
+    }
+}
+
+@mixin paddingVwSp($mTop, $mRight, $mBottom, $mLeft) {
+    @if $mLeft==auto and $mRight==auto {
+        padding-top: (math.div($mTop, 375) * 10000vw) * 0.01;
+        padding-bottom: (math.div($mBottom, 375) * 10000vw) * 0.01;
+        padding-left: auto;
+        padding-right: auto;
+    }
+
+    @else if $mLeft==auto {
+        padding-top: (math.div($mTop, 375) * 10000vw) * 0.01;
+        padding-bottom: (math.div($mBottom, 375) * 10000vw) * 0.01;
+        padding-left: auto;
+        padding-right: (math.div($mRight, 375) * 10000vw) * 0.01;
+    }
+
+    @else if $mRight==auto {
+        padding-top: (math.div($mTop, 375) * 10000vw) * 0.01;
+        padding-bottom: (math.div($mBottom, 375) * 10000vw) * 0.01;
+        padding-left: (math.div($mLeft, 375) * 10000vw) * 0.01;
+        padding-right: auto;
+    }
+
+    @else {
+        padding: (math.div($mTop, 375) * 10000vw) * 0.01 (math.div($mRight, 375) * 10000vw) * 0.01 (math.div($mBottom, 375) * 10000vw) * 0.01 (math.div($mLeft, 375) * 10000vw) * 0.01;
+    }
+}
+
+/* ==========================================================================
+fonts
+========================================================================== */
+@mixin rs_font_size($pc_size: 16px, $tab_size: 1.5625vw, $sp_size: 4.266666666666667vw) {
+    font-size: $pc_size;
+
+    @include mq(tab) {
+        font-size: $tab_size;
+    }
+
+    @include mq(sp) {
+        font-size: $sp_size;
+    }
+}
+
+@mixin rsFontSize($pc_size: 0px, $tab_size: 0vw, $sp_size: 0vw) {
+    @if $pc_size==0px {
+        @include mq(pc) {
+            font-size: $pc_size;
+        }
+    }
+
+    @else {
+        @include mq(pc) {
+            font-size: $pc_size+px;
+        }
+    }
+
+    @if $tab_size==0vw {
+        @include mq(tab) {
+            font-size: $tab_size;
+        }
+    }
+
+    @else {
+        @include mq(tab) {
+            font-size: (math.div($tab_size, $tabSizePxNone) * 10000vw) * 0.01;
+        }
+    }
+
+    @if $sp_size==0vw {
+        @include mq(sp) {
+            font-size: $sp_size;
+        }
+    }
+
+    @else {
+        @include mq(sp) {
+            font-size: (math.div($sp_size, 375) * 10000vw) * 0.01;
+        }
+    }
+}
+
+@mixin fontSizePc($pc_size: 0px) {
+    font-size: $pc_size+px;
+
+    @include mq(tab) {
+        font-size: (math.div($pc_size, $tabSizePxNone) * 10000vw) * 0.01;
+    }
+}
+
+@mixin fontSizeSp($sp_size: 0px) {
+    @include mq(sp) {
+        font-size: (math.div($sp_size, 375) * 10000vw) * 0.01;
+    }
+
+}
+
+@mixin fontVw($parentPxWidth, $pc_size: 16px) {
+    font-size: (math.div($pc_size, $parentPxWidth) * 10000vw) * 0.01;
+}
+
+@mixin fontVwSp($parentPxWidth, $pc_size: 16px) {
+    font-size: (math.div($pc_size, 375) * 10000vw) * 0.01;
+}
+
+/* ==========================================================================
+_lineHeight
+========================================================================== */
+@mixin lineheight($fontsize, $lineheight) {
+    @if $fontsize==auto and $lineheight==auto {
+        line-height: normal;
+    }
+
+    @else {
+        line-height: math.div($lineheight, $fontsize);
+        @include lineHeightCrop($fontsize, $lineheight);
+    }
+
+}
+
+@mixin lineHeightCrop($fontsize, $lineheight) {
+    &::before {
+        display: block;
+        width: 0;
+        height: 0;
+        margin-top: calc((1 - #{math.div($lineheight, $fontsize)}) * .5em);
+        content: "";
+    }
+
+    &::after {
+        display: block;
+        width: 0;
+        height: 0;
+        margin-bottom: calc((1 - #{math.div($lineheight, $fontsize)}) * .5em);
+        content: "";
+    }
+}
+
+/* ==========================================================================
+_letterspace
+========================================================================== */
+@mixin letterSpacing($letterSpacing) {
+    letter-spacing: (math.div($letterSpacing, 1000) * 1em);
+    text-indent: -(math.div($letterSpacing, 1000) * 1em);
+}
+
+/* ==========================================================================
+ボタンタイプ
+========================================================================== */
+@mixin buttonbase() {
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+
+    &::before {
+        position: absolute;
+        z-index: -1;
+        display: block;
+        content: '';
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+
+    &::after {
+        position: absolute;
+        z-index: -1;
+        display: block;
+        content: '';
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+}
+
+@mixin buttontype02($basebackcolor, $basebodercolor, $baseboderpx, $basetextcolor, $hoverbackcolor, $hoverbodercolor, $hovertextcolor) {
+    @include buttonbase();
+    background-color: $basebackcolor;
+    border: $baseboderpx solid $basebodercolor;
+    color: $basetextcolor;
+
+    &:hover {
+        background-color: $hoverbackcolor;
+        border-color: $hoverbodercolor;
+        color: $hovertextcolor;
+    }
+}
