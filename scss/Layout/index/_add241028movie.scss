@@ -1,0 +1,91 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+
+.p-movieContent {
+    @include mi.marginPercent(840, 60, auto, 0, auto);
+
+    @include mi.mq(sp) {
+        @include mi.marginPercent(335, 100, auto, 0, auto);
+    }
+}
+
+.p-movieContentAccTitle {
+    align-items: center;
+    flex-flow: row wrap;
+
+    @include mi.mq(sp) {}
+}
+
+.movieContentAccTitlespan01 {
+    @include mi.fontSizePc(20);
+    background: #669E5E;
+    @include mi.kadomaru(4px);
+    aspect-ratio: 120/41;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    line-height: normal;
+    letter-spacing: 0em;
+    text-indent: 0em;
+    font-weight: 600;
+    font-family: "yu-mincho-pr6n";
+    @include mi.ontenerWidth(840, 120);
+
+    @include mi.mq(sp) {
+        @include mi.fontSizeSp(13);
+        @include mi.ontenerWidth(335, 72);
+        aspect-ratio: 72/30;
+    }
+}
+
+.movieContentAccTitlespan02 {
+    @include mi.marginPercent(840, 0, auto, 0, 20);
+    @include mi.fontSizePc(20);
+    line-height: normal;
+    letter-spacing: 0em;
+    text-indent: 0em;
+    font-weight: 500;
+    font-family: "yu-mincho-pr6n";
+
+    @include mi.mq(sp) {
+        @include mi.marginPercent(335, 20, 0, 0, 0);
+        @include mi.fontSizeSp(15);
+        width: 100%;
+    }
+}
+
+.movieContentTxt {
+    @include mi.marginPercent(840, 30, 0, 0, 0);
+    @include mi.fontSizePc(16);
+    line-height: normal;
+    @include mi.letterSpacing(0);
+    font-weight: 600;
+    font-family: "Yu Gothic Pr6N";
+
+    @include mi.mq(sp) {
+        @include mi.marginPercent(335, 20, 0, 0, 0);
+        @include mi.fontSizeSp(12);
+        @include mi.lineheight(12, 20);
+        @include mi.letterSpacing(0);
+    }
+}
+
+.p-movieContentImage {
+    @include mi.marginPercent(840, 30, 0, 0, 0);
+
+    @include mi.mq(sp) {
+        @include mi.marginPercent(335, 20, 0, 0, 0);
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+    }
+}

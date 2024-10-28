@@ -426,6 +426,232 @@ LAYOUT
 }
 
 /* ==========================================================================
+use＆nameSpace
+========================================================================== */
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.p-movieContent {
+  margin-top: 60px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 1160px) {
+  .p-movieContent {
+    margin-top: 7.14%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  .p-movieContent {
+    margin-top: 100px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 1160px) {
+  .p-movieContent {
+    margin-top: 29.85%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.p-movieContentAccTitle {
+  align-items: center;
+  flex-flow: row wrap;
+}
+.movieContentAccTitlespan01 {
+  font-size: 20px;
+  background: #669E5E;
+  border-radius: 4px;
+  /* CSS3草案 */
+  -webkit-border-radius: 4px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 4px;
+  /* Firefox用 */
+  aspect-ratio: 120/41;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  line-height: normal;
+  letter-spacing: 0em;
+  text-indent: 0em;
+  font-weight: 600;
+  font-family: "yu-mincho-pr6n";
+  width: 120px;
+}
+@media screen and (max-width: 1160px) {
+  .movieContentAccTitlespan01 {
+    font-size: 1.724137931vw;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .movieContentAccTitlespan01 {
+    width: 14.28%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .movieContentAccTitlespan01 {
+    width: 72px;
+    aspect-ratio: 72/30;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 767px) {
+  .movieContentAccTitlespan01 {
+    font-size: 3.4666666667vw;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 1160px) {
+  .movieContentAccTitlespan01 {
+    width: 21.49%;
+  }
+}
+
+.movieContentAccTitlespan02 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  margin-right: auto;
+  font-size: 20px;
+  line-height: normal;
+  letter-spacing: 0em;
+  text-indent: 0em;
+  font-weight: 500;
+  font-family: "yu-mincho-pr6n";
+}
+@media screen and (max-width: 1160px) and (max-width: 1160px) {
+  .movieContentAccTitlespan02 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 2.38%;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .movieContentAccTitlespan02 {
+    font-size: 1.724137931vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .movieContentAccTitlespan02 {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 1160px) {
+  .movieContentAccTitlespan02 {
+    margin: 5.97% 0% 0% 0%;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 767px) {
+  .movieContentAccTitlespan02 {
+    font-size: 4vw;
+  }
+}
+
+.movieContentTxt {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0em;
+  text-indent: 0em;
+  font-weight: 600;
+  font-family: "Yu Gothic Pr6N";
+}
+@media screen and (max-width: 1160px) {
+  .movieContentTxt {
+    margin: 3.57% 0% 0% 0%;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .movieContentTxt {
+    font-size: 1.3793103448vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .movieContentTxt {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    line-height: 1.6666666667;
+    letter-spacing: 0em;
+    text-indent: 0em;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 1160px) {
+  .movieContentTxt {
+    margin: 5.97% 0% 0% 0%;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 767px) {
+  .movieContentTxt {
+    font-size: 3.2vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .movieContentTxt::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: calc((1 - 1.6666666667) * 0.5em);
+    content: "";
+  }
+  .movieContentTxt::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: calc((1 - 1.6666666667) * 0.5em);
+    content: "";
+  }
+}
+
+.p-movieContentImage {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+@media screen and (max-width: 1160px) {
+  .p-movieContentImage {
+    margin: 3.57% 0% 0% 0%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .p-movieContentImage {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 1160px) {
+  .p-movieContentImage {
+    margin: 5.97% 0% 0% 0%;
+  }
+}
+.p-movieContentImage img {
+  width: 100%;
+}
+
+/* ==========================================================================
 Component
 ========================================================================== */
 /*
