@@ -6,12 +6,33 @@ use＆nameSpace
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
+#movie {
+    padding-top: 200px;
+
+    @include mi.mq(sp) {
+        padding-top: 110px;
+    }
+}
+
+#newsBtm {
+    padding-top: 200px;
+
+    @include mi.mq(sp) {
+        padding-top: 110px;
+    }
+}
+
+.p-aboutus {
+    @include mi.mq(sp) {
+        padding-top: 110px;
+    }
+}
 
 .p-movieContent {
     @include mi.marginPercent(840, 60, auto, 0, auto);
 
     @include mi.mq(sp) {
-        @include mi.marginPercent(335, 100, auto, 0, auto);
+        margin-top: 60px;
     }
 }
 
@@ -130,7 +151,7 @@ LAYOUT
     color: var(--323232, #323232);
     @include mi.marginPercent(840, 8, auto, 0, auto);
     font-family: "yu-mincho-pr6n";
-
+    text-decoration: none;
 
     @include mi.mq(sp) {
         margin-top: 2%;
@@ -140,7 +161,7 @@ LAYOUT
         @include mi.fontSizeSp(15);
         @include mi.lineheight(15, 26);
         @include mi.letterSpacing(50);
-        text-decoration: underline;
+
     }
 
     &:hover {

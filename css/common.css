@@ -434,6 +434,30 @@ use＆nameSpace
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
+#movie {
+  padding-top: 200px;
+}
+@media screen and (max-width: 767px) {
+  #movie {
+    padding-top: 110px;
+  }
+}
+
+#newsBtm {
+  padding-top: 200px;
+}
+@media screen and (max-width: 767px) {
+  #newsBtm {
+    padding-top: 110px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .p-aboutus {
+    padding-top: 110px;
+  }
+}
+
 .p-movieContent {
   margin-top: 60px;
   margin-bottom: 0px;
@@ -450,18 +474,7 @@ LAYOUT
 }
 @media screen and (max-width: 767px) {
   .p-movieContent {
-    margin-top: 100px;
-    margin-bottom: 0px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-@media screen and (max-width: 767px) and (max-width: 1160px) {
-  .p-movieContent {
-    margin-top: 29.85%;
-    margin-bottom: 0%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 60px;
   }
 }
 
@@ -738,6 +751,7 @@ LAYOUT
   margin-left: auto;
   margin-right: auto;
   font-family: "yu-mincho-pr6n";
+  text-decoration: none;
 }
 @media screen and (max-width: 1160px) {
   .btnNewsBtm {
@@ -775,7 +789,6 @@ LAYOUT
     line-height: 1.7333333333;
     letter-spacing: 0.05em;
     text-indent: -0.05em;
-    text-decoration: underline;
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
