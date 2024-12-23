@@ -1,4 +1,4 @@
-@use '../Global/' as *;
+@use '../Global/'as *;
 
 .l-header {
   position: fixed;
@@ -7,25 +7,31 @@
   left: 0;
   z-index: 100;
   transition: background-color 0.4s;
+
   &.is-main {
     background-color: var(--white);
+
     .l-headerNavigationButtonLine {
       background-color: var(--black);
     }
+
     .l-headerCtaButton {
       color: var(--white);
       background: var(--gradient);
     }
+
     .l-headerCtaButtonIcon {
       display: none;
       opacity: 0;
       visibility: hidden;
     }
+
     .l-headerCtaButtonIcon-w {
       display: block;
       opacity: 1;
       visibility: visible;
     }
+
     .l-headerCtaButton:hover {
       color: var(--white);
       opacity: 0.75;
@@ -39,9 +45,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   @include MQ('md') {
     padding: 20px 30px;
   }
+
   @include MQ('lg') {
     padding: 29px 30px;
   }
@@ -59,6 +67,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s, visibility 0.4s;
+
   @include MQ('md') {
     padding: 40px;
     right: 30px;
@@ -66,6 +75,7 @@
     width: 399px;
     border-radius: 20px;
   }
+
   @include MQ('xl') {
     top: 131px;
   }
@@ -80,6 +90,7 @@
   display: flex;
   flex-direction: column;
   gap: 23px;
+
   @include MQ('md') {
     gap: 36px;
   }
@@ -98,13 +109,15 @@
 }
 
 .l-headerLogo {
-  width: clamp(270px, 13.5vw + 219px, 479px);
-  height: clamp(22px, 1.4vw + 17px, 43px);
+  width: clamp(270px, 13.5vw + 561px, 561px);
+  height: clamp(22px, 1.4vw + 43px, 43px);
+
   a {
     width: 100%;
     height: 100%;
     display: block;
   }
+
   img {
     width: 100%;
     height: 100%;
@@ -135,6 +148,7 @@
   width: 328px;
   height: 41px;
   border-radius: 140px;
+
   @include MQ('md') {
     display: flex;
   }
@@ -159,6 +173,7 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
+
   @include MQ('md') {
     width: 40px;
     height: 21px;
@@ -167,13 +182,16 @@
   &.on {
     .l-headerNavigationButtonLine {
       transform: rotate(-45deg);
+
       @include MQ('md') {
         transform: rotate(-45deg) translate(-6px, 6px);
       }
+
       &::before {
         top: 0;
         transform: rotate(90deg);
       }
+
       &::after {
         opacity: 0;
       }
@@ -187,6 +205,7 @@
   height: 1px;
   background-color: var(--white);
   transition: all 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+
   &::before {
     transition: all 0.45s cubic-bezier(0.33, 1, 0.68, 1);
     position: absolute;
@@ -196,10 +215,12 @@
     display: block;
     background-color: inherit;
     content: '';
+
     @include MQ('md') {
       top: 11px;
     }
   }
+
   &::after {
     transition: all 0.1s cubic-bezier(0.33, 1, 0.68, 1);
     position: absolute;
@@ -209,6 +230,7 @@
     display: block;
     background-color: inherit;
     content: '';
+
     @include MQ('md') {
       top: 22px;
     }
@@ -219,9 +241,11 @@
   .l-headerNavListItemLink:hover {
     color: var(--green);
   }
+
   .l-headerLogo a:hover {
     opacity: 0.75;
   }
+
   .l-headerCtaButton:hover {
     color: var(--green);
   }
